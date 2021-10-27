@@ -1,4 +1,5 @@
-import {useState} from 'react';
+import React,{useState} from 'react';
+import type { NextPage } from 'next';
 import axios from 'axios';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -6,11 +7,11 @@ import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Input from '@mui/material/Input';
-import styles from '../styles/SignupLogin.module.css'
+import styles from '../styles/SignupLogin.module.css';
 import Button from '@mui/material/Button';
 
+const Login:NextPage = () => {
 
-export default function Login(props:any) {
     const router = useRouter();
     const [email,setEmail] =useState('');
     const [password,setPassword] =useState('');
@@ -30,8 +31,10 @@ export default function Login(props:any) {
             });
             console.log(email,password);
     }
+
+
     return (
-        <div>
+        <div className={styles.container}>
             <Card className={styles.card}>
                 <h1 className={styles.boxTitle}>{process.env.APP_NAME}</h1>
                 <Box
@@ -72,14 +75,18 @@ export default function Login(props:any) {
                     </Button>
                     
                     <br/>
+                    <Link href='/signup'>
                     <Button 
-                        onClick={props.componentHanlder}
+                        
                         variant="text">
                             Don't have an account
                     </Button>
+                    </Link>
 
                 </Box>
             </Card>
         </div>
     )
 }
+
+export default Login;
