@@ -14,7 +14,16 @@ export default function Navbar() {
             <div className="navbar-nav">
               <a className="nav-link active" aria-current="page">Home</a>
               <Link href='/doctor'>
-                <a className="nav-link active" aria-current="page">Doctors</a>
+                <a className="nav-link active" 
+                aria-current="page">
+                  Doctors
+                </a>
+              </Link>
+              <Link href='/profile'>
+                <a className="nav-link active" 
+                aria-current="page">
+                  Profile
+                </a>
               </Link>
             </div>
           </div>

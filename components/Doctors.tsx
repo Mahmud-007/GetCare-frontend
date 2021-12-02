@@ -15,10 +15,10 @@ export default function Doctor(props:any) {
     // let store = createStore(allReducers);
   const [doctors,setDoctors] = useState([{
     id: 1,
-    speciality: "demo  ",
-    license: 'mahmud sdfg',
-    location: 'mahmud@gmail.com',
-    timing: "flskdfj"
+    speciality: "null  ",
+    license: 'null',
+    location: 'null',
+    timing: "null"
   }]);
   
   //console.log("form auth",isAuthenticated)
