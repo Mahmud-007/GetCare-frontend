@@ -10,6 +10,8 @@ import Input from '@mui/material/Input';
 import styles from '../styles/SignupLogin.module.css';
 import Button from '@mui/material/Button';
 
+const Cookies = require('js-cookie');
+
 const Login:NextPage = () => {
 
     const router = useRouter();
@@ -17,14 +19,18 @@ const Login:NextPage = () => {
     const [password,setPassword] =useState('');
     const loginSubmitHandler = (e:any)=>{
         e.preventDefault();
-        
-        axios.post(`${process.env.API}/login`,{
+        axios.post(`${process.env.API}/login`,
+        {
             email,password
-        })
-            .then((response)=>{
-                console.log(response.data);
-                 
-                 router.push('/auth');
+        }
+        )
+            .then((response:any)=>{
+                console.log(response.data.access_token);
+                Cookies.set('user',response.data.access_token, 
+                    { 
+                        expires: 7 
+                    })
+                router.push('/');
             })
             .catch((error)=>{
                 console.log(error);
