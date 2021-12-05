@@ -21,8 +21,14 @@ export default function Navbar() {
               </Link>
               <Link href='/profile'>
                 <a className="nav-link active" 
-                aria-current="page">
-                  Profile
+                  aria-current="page">
+                    Profile
+                </a>
+              </Link>
+              <Link href='/appointment'>
+                <a className="nav-link active" 
+                  aria-current="page">
+                    Appointment
                 </a>
               </Link>
             </div>

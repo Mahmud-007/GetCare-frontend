@@ -49,7 +49,10 @@ export default function Doctor(props:any) {
                 {
                 doctors.map(doctor => (
                     <Link href={`doctor/${doctor.id}`}>
-                      <li key={doctor.id}>{doctor.speciality} -- {doctor.license} -- {doctor.timing} -- {doctor.location}</li>
+                      <li key={doctor.id}>
+                        {doctor.speciality} -- {doctor.license} -- {doctor.timing} -- {doctor.location}
+                        <Button></Button>
+                        </li>
                     </Link>
                 )) 
                 
